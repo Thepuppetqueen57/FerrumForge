@@ -57,7 +57,16 @@ async fn main() {
     let mut play_games_button = Button {
         text: "Play Games".to_string(),
         x: screen_width() as i32 / 2 - 125,
-        y: screen_height() as i32 / 2,
+        y: screen_height() as i32 / 2 - 55,
+        width: 250,
+        height: 100,
+        is_disabled: false
+    };
+
+    let mut game_editor_button = Button {
+        text: "Make A Game".to_string(),
+        x: screen_width() as i32 / 2 - 125,
+        y: screen_height() as i32 / 2 + 55,
         width: 250,
         height: 100,
         is_disabled: false
@@ -66,7 +75,10 @@ async fn main() {
     loop {
         // Logic
         play_games_button.x = screen_width() as i32 / 2 - 100;
-        play_games_button.y = screen_height() as i32 / 2;
+        play_games_button.y = screen_height() as i32 / 2 - 55;
+
+        game_editor_button.x = screen_width() as i32 / 2 - 100;
+        game_editor_button.y = screen_height() as i32 / 2 + 55;
 
         // Rendering
         clear_background(Color { r: 0.1, g: 0.1, b: 0.1, a: 1.0 });
@@ -80,6 +92,7 @@ async fn main() {
         );
 
         play_games_button.draw();
+        game_editor_button.draw();
 
         next_frame().await
     }
