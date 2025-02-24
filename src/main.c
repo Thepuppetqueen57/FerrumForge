@@ -15,7 +15,13 @@ void main() {
 
         ClearBackground(BLACK);
 
-        DrawText("FerrumForge", 100, 100, 50, WHITE);
+        DrawText(
+            "FerrumForge",
+            GetScreenWidth() / 2 - MeasureText("FerrumForge", 50) / 2,
+            GetScreenHeight() / 2 - 100,
+            50,
+            WHITE
+        );
 
         EndDrawing();
     }
