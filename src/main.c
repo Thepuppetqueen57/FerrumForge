@@ -12,7 +12,7 @@ bool is_clicked(Button *self) {
     return false;
 }
 
-void draw_button(Button *self) {
+void draw_button(Button *self, char text[]) {
     DrawRectangle(
         self->x,
         self->y,
@@ -25,6 +25,14 @@ void draw_button(Button *self) {
     DrawRectangleLinesEx(
         hey_bitch,
         10.0,
+        BLACK
+    );
+
+    DrawText(
+        text,
+        self->x + MeasureText(text, 20) / 2,
+        self->y + 20 * 2,
+        20,
         BLACK
     );
 }
@@ -60,7 +68,7 @@ void main() {
             WHITE
         );
 
-        draw_button(&play_button);
+        draw_button(&play_button, "Play Games!");
 
         EndDrawing();
     }
