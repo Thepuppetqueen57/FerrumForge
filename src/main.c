@@ -49,7 +49,15 @@ void main() {
 
     Button play_button = {
         GetScreenWidth() / 2 - 100,
-        GetScreenHeight() / 2 - 100,
+        GetScreenHeight() / 2 - 55 - 75,
+        200,
+        100,
+        false
+    };
+
+    Button game_editor_button = {
+        GetScreenWidth() / 2 - 100,
+        GetScreenHeight() / 2 + 55 - 75,
         200,
         100,
         false
@@ -57,7 +65,10 @@ void main() {
 
     while (!WindowShouldClose()) {
         play_button.x = GetScreenWidth() / 2 - 100;
-        play_button.y = GetScreenHeight() / 2 - 100;
+        play_button.y = GetScreenHeight() / 2 - 55 - 75;
+
+        game_editor_button.x = GetScreenWidth() / 2 - 100;
+        game_editor_button.y = GetScreenHeight() / 2 + 55 - 75;
 
         // Rendering
         BeginDrawing();
@@ -73,6 +84,7 @@ void main() {
         );
 
         draw_button(&play_button, "Play Games!");
+        draw_button(&game_editor_button, "Make Games!");
 
         EndDrawing();
     }
