@@ -56,6 +56,10 @@ void main() {
     };
 
     while (!WindowShouldClose()) {
+        play_button.x = GetScreenWidth() / 2 - 100;
+        play_button.y = GetScreenHeight() / 2 - 100;
+
+        // Rendering
         BeginDrawing();
 
         ClearBackground((Color) { 20, 20, 20, 255 });
